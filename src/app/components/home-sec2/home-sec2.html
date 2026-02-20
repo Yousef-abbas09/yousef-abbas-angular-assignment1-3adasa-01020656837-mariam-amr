@@ -1,0 +1,27 @@
+<section class="categories-section py-5">
+  <div class="container">
+    
+    <div class="text-center mb-5">
+      <div class="badge-custom mb-3">
+        <i class="fa-solid fa-bolt-lightning me-2"></i> استكشف الأقسام
+      </div>
+      <h2 class="section-title text-white">تصفح حسب <span class="highlight">التصنيف</span></h2>
+      <p>اختر المجال الذي تود تعلمه اليوم</p>
+    </div>
+
+    <div class="row g-4">
+      @for (cat of categories; track cat.title) {
+        <div class="col-md-6 col-lg-4">
+          <div class="category-card">
+            <div class="icon-wrapper">
+              <i class="fa-solid" [ngClass]="cat.icon"></i>
+            </div>
+            <h3 class="cat-name">{{ cat.title }}</h3>
+            <span class="post-count">{{ cat.count }}</span>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

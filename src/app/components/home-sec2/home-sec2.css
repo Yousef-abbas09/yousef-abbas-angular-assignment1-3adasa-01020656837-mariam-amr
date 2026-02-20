@@ -1,0 +1,79 @@
+.categories-section {
+  background-color: #050505;
+  direction: rtl;
+}
+
+.badge-custom {
+  display: inline-block;
+  background: #1a1a1a;
+  color: #f97216;
+  padding: 6px 16px;
+  border-radius: 50px;
+  border: 1px solid #333;
+  font-size: 0.85rem;
+}
+
+.highlight {
+  color: #f97216;
+}
+
+/* الكارت الأساسي */
+.category-card {
+  background: #121212;
+  border: 1px solid #262626;
+  border-radius: 20px;
+  padding: 40px 20px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* تأثير الـ Hover اللي لونة مختلف */
+.category-card:hover {
+  background: #1a1a1a;
+  border-color: #f97216;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(249, 114, 22, 0.1);
+}
+
+.icon-wrapper {
+  font-size: 2.5rem;
+  color: #f97216;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover .icon-wrapper {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.cat-name {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.post-count {
+  color: #737373;
+  font-size: 0.9rem;
+}
+
+/* إضافة لمعة بسيطة عند الـ Hover */
+.category-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(249,114,22,0.05) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.category-card:hover::after {
+  opacity: 1;
+}   

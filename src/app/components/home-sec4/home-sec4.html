@@ -1,0 +1,42 @@
+<section class="newsletter-section py-5">
+  <div class="container">
+    <div class="newsletter-card mx-auto text-center p-5">
+      
+      <div class="icon-box mb-4 mx-auto">
+        <i class="fa-solid fa-envelope-open-text"></i>
+      </div>
+
+      <h2 class="section-title text-white mb-3">اشترك في <span class="highlight">نشرتنا الإخبارية</span></h2>
+      <p class="section-subtitle text-white mb-5">
+        احصل على نصائح التصوير الحصرية ودروس جديدة مباشرة في بريدك الإلكتروني
+      </p>
+
+      <div class="subscribe-form d-flex flex-column flex-md-row gap-3 justify-content-center align-items-center">
+        <input 
+          type="email" 
+          class="form-control newsletter-input" 
+          placeholder="أدخل بريدك الإلكتروني"
+          [(ngModel)]="email"
+          [ngModelOptions]="{standalone: true}"
+        >
+        <button class="btn btn-subscribe" (click)="subscribe()">
+          اشترك الآن
+        </button>
+      </div>
+
+      <div class="trust-info mt-5 d-flex align-items-center justify-content-center gap-4">
+        <div class="user-avatars d-flex flex-row-reverse">
+          <img src="https://i.pravatar.cc/40?img=1" alt="user" class="avatar">
+          <img src="https://i.pravatar.cc/40?img=2" alt="user" class="avatar">
+          <img src="https://i.pravatar.cc/40?img=3" alt="user" class="avatar">
+        </div>
+        <p class="mb-0 text-white small">
+          انضم لـ <span class="text-white fw-bold">+10,000</span> مصور مشترك
+        </p>
+        <div class="divider"></div>
+        <p class="mb-0 text-white small">بدون إزعاج • إلغاء الاشتراك في أي وقت</p>
+      </div>
+
+    </div>
+  </div>
+</section>

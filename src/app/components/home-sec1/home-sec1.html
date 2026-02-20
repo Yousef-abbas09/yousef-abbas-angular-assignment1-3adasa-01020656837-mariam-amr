@@ -1,0 +1,41 @@
+<section class="featured-section py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="badge-featured">مميز</span>
+      <h2 class="section-title text-white">مقالات مختارة</h2>
+    </div>
+
+    <div class="row g-4">
+      @for (post of featuredPosts(); track post.id) {
+        <div class="col-12" (click)="EnterBlog(post.id)">
+          <div class="horizontal-card">
+            <div class="row g-0 align-items-center">
+              <div class="col-md-7 p-4 order-2 order-md-1">
+                <div class="d-flex align-items-center gap-3 mb-2">
+                  <span class="cat-tag">{{ post.category }}</span>
+                </div>
+                <h3 class="post-title mb-3 text-white">{{ post.title }}</h3>
+                <p class="post-excerpt ">{{ post.excerpt }}</p>
+                
+                <div class="d-flex align-items-center justify-content-between mt-4">
+                  <div class="author-box d-flex align-items-center gap-2">
+                    <img [src]="post.author?.avatar" class="author-img">
+                    <div class="text-end">
+                      <h6 class="mb-0 small fw-bold text-white">{{ post.author?.name }}</h6>
+                    </div>
+                  </div>
+                  <button class="btn-read-more">اقرأ المقال</button>
+                </div>
+              </div>
+              <div class="col-md-5 order-1 order-md-2">
+                <img [src]="post.image" class="featured-img" style="height: 300px; object-fit: cover; width: 100%;">
+              </div>
+            </div>
+          </div>
+        </div>
+      } @empty {
+        <p class="text-center ">لا توجد بيانات حالياً</p>
+      }
+    </div>
+  </div>
+</section>

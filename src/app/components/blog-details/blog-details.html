@@ -1,0 +1,107 @@
+<article class="main-article bg-dark-custom min-vh-100 text-white">
+    
+    <div class="hero-section position-relative overflow-hidden">
+        <img [src]="post.image" alt="Golden Hour" class="position-absolute w-100 h-100 object-fit-cover">
+        <div class="hero-overlay-gradient position-absolute inset-0"></div>
+        
+        <div class="position-absolute top-0 start-0 end-0 p-4">
+            <nav class="breadcrumb-custom d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill border border-white-10">
+                <a routerLink="/home" class="text-white-50"><i class="fa-solid fa-home"></i></a>
+                <i class="fa-solid fa-chevron-left text-white-30 small"></i>
+                <a routerLink="/blog" class="text-white-50 text-decoration-none">المدونة</a>
+                <i class="fa-solid fa-chevron-left text-white-30 small"></i>
+                <span class="text-orange-custom font-medium">{{post.category}}</span>
+            </nav>
+        </div>
+
+        <div class="position-absolute bottom-0 start-0 end-0 p-4 p-md-5">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+                    <span class="badge rounded-pill bg-orange-custom p-2 px-4">{{post.category}}</span>
+                    <div class="d-flex gap-4 text-white-50 small">
+                        <span><i class="fa-regular fa-calendar me-2"></i>{{post.date}}</span>
+                        <span><i class="fa-regular fa-clock me-2"></i>{{post.readTime}}</span>
+                    </div>
+                </div>
+                <h1 class="display-4 fw-bold mb-4 max-w-800">إتقان تصوير الساعة الذهبية: دليل شامل</h1>
+                
+                <div class="author-card d-flex align-items-center gap-3 p-3 rounded-4 border border-white-10 fit-content">
+                    <img [src]="post.author.avatar" class="rounded-full border-orange" width="56" height="56">
+                    <div>
+                        <p class="mb-0 fw-bold">{{post.author.name}}</p>
+                        <p class="mb-0 small text-white-50">{{post.author.role}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row g-5">
+            <aside class="col-lg-4 order-1 order-lg-2">
+                <div class="sticky-top pt-4">
+                    <div class="card bg-card-custom border-grey-custom p-4 rounded-4 mb-4">
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <div class="icon-box-orange"><i class="fa-solid fa-list"></i></div>
+                            <h5 class="mb-0 fw-bold">محتويات المقال</h5>
+                        </div>
+                        <nav class="nav flex-column gap-2">
+                            @for (section of sections; track section.id; let i = $index) {
+                                <a (click)="scrollToSection(i)" class="toc-link d-flex align-items-center gap-3 p-2 rounded-3 text-decoration-none text-white-50">
+                                    <span class="toc-number">{{i+1}}</span>
+                                    <span class="small">{{section.title}}</span>
+                                </a>
+                            }
+                        </nav>
+                    </div>
+                    
+                    <div class="card bg-card-custom border-grey-custom p-3 rounded-4">
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="bg-dark p-3 rounded-3 text-center">
+                                    <i class="fa-regular fa-clock text-orange-custom mb-2 d-block"></i>
+                                    <span class="d-block fw-bold small">8 دقائق</span>
+                                    <span class="text-muted smallest">وقت القراءة</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="bg-dark p-3 rounded-3 text-center">
+                                    <i class="fa-regular fa-calendar text-orange-custom mb-2 d-block"></i>
+                                    <span class="d-block fw-bold small">١٥ يناير</span>
+                                    <span class="text-muted smallest">نشر في</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="col-lg-8 order-2 order-lg-1">
+                <div class="quote-box p-4 rounded-4 border-orange-light mb-5">
+                    <p class="lead fst-italic mb-0">"تعلم كيفية التقاط صور مذهلة خلال الساعة الذهبية مع نصائح احترافية حول الإضاءة والتكوين."</p>
+                </div>
+
+                <div class="article-content">
+                    @for (section of sections; track section.id) {
+                        <h2 [id]="section.id" class="d-flex align-items-center gap-3 mt-5 mb-4 fw-bold">
+                            <span class="icon-box-orange-light"><i class="fa-solid fa-camera"></i></span>
+                            {{section.title}}
+                        </h2>
+                        <div class="content-text text-white-50 mb-4 lh-lg">
+                            {{section.content}}
+                        </div>
+                    }
+                </div>
+
+                <div class="card bg-card-custom border-grey-custom p-4 rounded-4 mt-5">
+                    <h6 class="fw-bold mb-3"><i class="fa-solid fa-tags text-orange-custom me-2"></i>الوسوم</h6>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tag-badge">#إضاءة</span>
+                        <span class="tag-badge">#الساعة_الذهبية</span>
+                        <span class="tag-badge">#تصوير_خارجي</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

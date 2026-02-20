@@ -1,0 +1,215 @@
+.hero {
+  position: relative;
+  padding-top: 150px;
+  overflow: hidden;
+  background-image: linear-gradient(-135deg, #0A0A0A 0%, #211209 50%, #0A0A0A 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(38, 38, 38, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 38, 38, 0.5) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 1;
+}
+
+.hero>* {
+  position: relative;
+  z-index: 2;
+}
+
+.first {
+  width: 10%;
+  background-color: #25160b;
+  border: 1px solid #64310e;
+}
+
+.text-o {
+  color: #f97216;
+}
+
+.icon1 {
+  color: #f97216;
+  font-size: 6px;
+}
+
+.icon2 {
+  color: #f97216;
+  font-size: 12px;
+}
+
+.f {
+  background-image: linear-gradient(90deg, #fa8f3a, #faaa20);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* الألوان الأساسية المستوحاة من الصورة */
+:root {
+  --bg-black: #050505;       /* خلفية الصفحة السوداء */
+  --card-dark: #121212;      /* لون الكارت رمادي غامق جداً */
+  --border-dim: #262626;     /* لون الحدود الخافت */
+  --accent-orange: #f97216;  /* البرتقالي الخاص بالهوية */
+  --text-gray: #a3a3a3;      /* لون النصوص الثانوية */
+}
+
+/* تأكد أن الصفحة كلها خلفيتها سوداء */
+:host {
+  display: block;
+  background-color: var(--bg-black);
+  min-height: 100vh;
+  color: white;
+}
+
+.content-section {
+  background-color: var(--bg-black);
+}
+
+/* أزرار الفلترة */
+.btn-filter {
+  background: #171717;
+  border: 1px solid var(--border-dim);
+  color: var(--text-gray);
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.btn-filter.active {
+  background: var(--accent-orange);
+  color: white;
+  border-color: var(--accent-orange);
+}
+
+/* صندوق البحث */
+.search-box input {
+  background: #121212 !important;
+  border: 1px solid var(--border-dim) !important;
+  border-radius: 10px;
+  color: white !important;
+  padding-right: 40px;
+}
+
+.search-box i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-gray);
+}
+
+/* تصميم الكارت (Blog Card) */
+.blog-card {
+  background: var(--card-dark);
+  border: 1px solid var(--border-dim);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.blog-card:hover {
+  border-color: #404040;
+  transform: translateY(-5px);
+}
+
+.card-img-wrapper {
+  position: relative;
+  height: 200px;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* النصوص داخل الكارت */
+.card-title {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.card-text {
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+.card-meta {
+  font-size: 0.75rem;
+  color: var(--text-gray);
+}
+
+.dot {
+  width: 3px;
+  height: 3px;
+  background: #525252;
+  border-radius: 50%;
+}
+
+/* الكاتب والزرار السفلي */
+.author-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.arrow-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--accent-orange);
+  background: transparent;
+  color: var(--accent-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-btn:hover {
+  background: var(--accent-orange);
+  color: white;
+}
+
+/* تجبير الخلفية السوداء على الـ section كلها */
+.content-section {
+    background-color: #050505 !important; /* لون أسود صريح */
+    min-height: 100vh;
+}
+
+/* تعديل الـ search box عشان ميبقاش أبيض */
+.search-box .form-control {
+    background-color: #121212 !important;
+    border: 1px solid #262626 !important;
+    color: white !important;
+}
+
+/* تأكد إن الكارت مش واخد أي لون خلفية من بوتستراب */
+.blog-card {
+    background-color: #121212 !important; /* نفس لون الكارت في الصورة */
+    border: 1px solid #262626 !important;
+}
+
+/* عشان نضمن إن الكلام العربي ميبقاش لازق في الحواف */
+.author-details {
+    margin-right: 10px; /* مسافة بين الصورة والاسم في العربي */
+}
